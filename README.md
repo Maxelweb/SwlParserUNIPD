@@ -1,9 +1,11 @@
 # Swl Parser / UNIPD
 
+Developed by Jatus93 & Maxel
+
 ## Installazione e controllo
 
 1. Posizionare antlr4 in /home
-2. Avviare source setup.sh
+2. Avviare `source setup.sh`
 3. `antlr4 -Dlanguage=Cpp swl.g4`
 4. `make syncheck`
 5. `syncheck ./example.swl` --> controlla se la sintassi sia corretta
