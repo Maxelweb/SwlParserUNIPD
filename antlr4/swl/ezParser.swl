@@ -1,0 +1,22 @@
+begin
+	let check be 0
+	let x be 12
+	let y be 20
+	let z be 10
+	mult x to x
+	mult y to 3
+	let equation be x
+	add y to equation
+	div z to equation	
+
+	if check then
+		print equation
+	else
+		while equation > 20 do
+			sub 1 to equation
+		end
+	end 
+
+	print equation
+
+end
