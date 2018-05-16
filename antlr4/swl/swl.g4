@@ -18,7 +18,14 @@ var        : (NUMBER|ID) | 'not' (NUMBER|ID);
 
 ID        : [a-zA-Z]+ ;
 NUMBER    : [0-9]+ ;
+<<<<<<< HEAD
 OPTCONF   : '>'|'>='|'<'|'=<'|'!='|'==';
 LOGIC     : 'and'|'or';
+=======
+CARATTERI : [<>=!]+ ;
+OPTCONF   : '>'|'<'|'>='|'<='|'!='|'==';
+LOGIC     : 'and'|'or'|'not';
+
+>>>>>>> a4087142f25e103b30f2a6bddf2539813c7046de
 WS        : [ \n\t]+ -> skip;
 ErrorChar : . ;
