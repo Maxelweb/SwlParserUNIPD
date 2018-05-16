@@ -20,6 +20,17 @@ void MyListener::exitProgram(swlParser::ProgramContext *ctx) {
     cout << "}" << endl;
 }
 
+void MyListener::enterWhiledo(swlParser::WhiledoContext *ctx){
+  cout << string(indent, ' ') <<"while (";
+    cout <<"){"<<endl;
+    indent += 4;
+}
+
+void MyListener::exitWhiledo(swlParser::WhiledoContext *ctx){
+    cout << string(indent, ' ') << "}";
+    indent -= 4;
+}
+
 void MyListener::exitAssign(swlParser::AssignContext *ctx) {
     string name = ctx->ID(0)->getText();
     string val;

@@ -2,7 +2,7 @@ grammar swl;
 
 program   : 'begin' statement+ 'end';
 
-statement : assign | add | sub | mult | div | print | ifthenelse | whiledo;
+statement : assign | add | sub | mult | div | print | ifthenelse | whiledo ;
 
 assign     : 'let' ID 'be' (NUMBER | ID) ;
 print      : 'print' (NUMBER | ID) ;
@@ -20,6 +20,5 @@ ID        : [a-zA-Z]+ ;
 NUMBER    : [0-9]+ ;
 CARATTERI : [<>=!]+ ;
 LOGIC     : ' and '|' or '|' not ';
-
 WS        : [ \r\n\t]+ -> skip;
 ErrorChar : . ;

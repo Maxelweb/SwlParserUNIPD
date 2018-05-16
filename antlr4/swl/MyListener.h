@@ -22,12 +22,12 @@ public:
 
   void exitPrint(swlParser::PrintContext *ctx);
 
- /* void enterWhile(swlParser::WhileContext *ctx);
-  void exitWhile(swlParser::WhileContext *ctx);
+  void enterWhiledo(swlParser::WhiledoContext *ctx);
+  void exitWhiledo(swlParser::WhiledoContext *ctx);
 
-  void enterIf(swlParser::IfContext *ctx);
-  void exitIf(swlParser::IfContext *ctx);
-*/
+  /*void enterIfthenelse(swlParser::IfContext *ctx);
+  void exitIfthenelse(swlParser::IfContext *ctx);*/
+
   void exitAdd(swlParser::AddContext *ctx);
   void exitMult(swlParser::MultContext *ctx);
   void exitSub(swlParser::SubContext *ctx);
