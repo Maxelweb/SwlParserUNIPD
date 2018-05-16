@@ -32,6 +32,7 @@ public:
   void exitMult(swlParser::MultContext *ctx);
   void exitSub(swlParser::SubContext *ctx);
   void exitDiv(swlParser::DivContext *ctx);
+  void exitCondition(swlParser::ConditionContext *ctx);
   void exitVar(swlParser::VarContext *ctx);
 
 };

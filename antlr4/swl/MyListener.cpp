@@ -15,36 +15,7 @@ void MyListener::enterProgram(swlParser::ProgramContext *ctx) {
     indent += 4;
 }
 
-void MyListener::enterWhile(swlParser::WhileContext *ctx) {
-
-    string logic;
-    if(ctx->OPTCONF() == "and") logic = "&&";
-    elseif(ctx->OPTCONF() == "or") logic = "||";
-    elseif(ctx->OPTCONF() == "not") logic = "!";
-
-
-    cout << "while (" << Foo << ") {" << endl
-         << Bar << endl
-         << "}" << endl;
-
-    indent += 4;
-}
-void MyListener::enterIf(swlParser::IfContext *ctx) {
-    cout << "#include <iostream>" << endl << endl
-         << "using namespace std;" << endl << endl
-         << "int main() {" << endl;
-    indent += 4;
-}
-
 void MyListener::exitProgram(swlParser::ProgramContext *ctx) {
-    cout << "}" << endl;
-}
-
-void MyListener::exitWhile(swlParser::WhileContext *ctx) {
-    cout << "}" << endl;
-}
-
-void MyListener::exitIf(swlParser::IfContext *ctx) {
     cout << "}" << endl;
 }
 
@@ -58,7 +29,6 @@ void MyListener::exitAssign(swlParser::AssignContext *ctx) {
     }
     cout << string(indent, ' ') << "int " << name << " = " << val << ";" << endl;
 }
-
 
 void MyListener::exitPrint(swlParser::PrintContext *ctx) {
     string val;
@@ -121,6 +91,28 @@ void MyListener::exitDiv(swlParser::DivContext *ctx) {
     }
     cout << string(indent, ' ') << name << " = " << name << "/" << val << ";" << endl;
 }
+
+void MyListener::exitCondition(swlParser::ConditionContext *ctx) {
+
+  if(ctx->CARATTERI()!=NULL)
+  {
+    string logic;
+    if(ctx->CARATTERI()->getText() == "and") logic = "&&";
+    else if(ctx->CARATTERI()->getText() == "or") logic = "||";
+    else if(ctx->CARATTERI()->getText() == "not") logic = "!";
+
+    cout << logic;
+  }
+}
+
 void MyListener::exitVar(swlParser::VarContext *ctx) {
-  cout << ctx->ID()->getText()<<endl;
+
+  if(ctx->ID() != NULL)
+  {
+    cout << ' ' << ctx->ID()->getText() << ' ';
+  }
+  else if(ctx->NUMBER()!=NULL)
+  {
+    cout << ' ' << ctx->NUMBER()->getText() << ' ';
+  }
 }

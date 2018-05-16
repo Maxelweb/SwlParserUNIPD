@@ -13,19 +13,14 @@ div        : 'div' (NUMBER | ID) 'to' ID ;
 whiledo    : 'while' boolean 'do' statement+ 'end';
 ifthenelse : 'if' boolean 'then' statement+ 'end'| 'if' boolean 'then' statement+ 'else' statement+ 'end' ;
 boolean    : condition LOGIC condition | condition LOGIC boolean | boolean LOGIC condition | boolean LOGIC boolean | '(' boolean+ ')' | 'not (' boolean+ ')';
-condition  : var | '(' var OPTCONF var ')' | var OPTCONF var;
+condition  : var | '(' var CARATTERI var ')' | var CARATTERI var;
 var        : (NUMBER|ID) | 'not' (NUMBER|ID);
 
 ID        : [a-zA-Z]+ ;
 NUMBER    : [0-9]+ ;
-<<<<<<< HEAD
-OPTCONF   : '>'|'>='|'<'|'=<'|'!='|'==';
-LOGIC     : 'and'|'or';
-=======
 CARATTERI : [<>=!]+ ;
 OPTCONF   : '>'|'<'|'>='|'<='|'!='|'==';
 LOGIC     : 'and'|'or'|'not';
 
->>>>>>> a4087142f25e103b30f2a6bddf2539813c7046de
 WS        : [ \n\t]+ -> skip;
 ErrorChar : . ;
