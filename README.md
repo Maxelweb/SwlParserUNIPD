@@ -2,6 +2,21 @@
 
 Developed by Jatus93 & Maxel
 
+
+## Avanzamento
+
+- [x] il ciclo while funziona
+- [x] il costrutto if-then-else funziona
+- [x] operazioni di moltiplicazione e divisione funzionano
+- [ ] **`Da Verificare!96`** espressioni booleane complesse che utilizzano gli operatori logici and, or, not e le parentesi
+
+
+## Quick links 
+
+- **[swl.g4](https://github.com/Maxelweb/SwlParserUNIPD/blob/master/antlr4/swl/swl.g4)** - Sintassi del linguaggio
+- **[ezParser.swl](https://github.com/Maxelweb/SwlParserUNIPD/blob/master/antlr4/swl/ezParser.swl)** - Prog. Ezempio 1
+
+
 ## Installazione e controllo
 
 1. Posizionare antlr4 in /home
