@@ -1,26 +1,21 @@
 begin
-
 	let Check be 1
 	let Vx be 1
 	let Vy be 1
 	let Vz be 2
 	let Tot be 0
-
 	if ((Vx < 0 or Vy < 0 or Vz < 0) and Check) then
 	  print 0
 	else
-
 	  add Vx to Tot
 	  add Vy to Tot
 	  div Vz to Tot
-	  
 	  if (Tot >= 1) then
 	    print 1
 	  else 
 	    if (Tot != 0) then
-	        print -1
+	        print 1
 	    end
 	  end
 	end
-
 end

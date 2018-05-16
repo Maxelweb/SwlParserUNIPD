@@ -4,9 +4,10 @@
 
 using namespace std;
 
+/*
 string MyListener::conditionCheck(swlParser::ProgramContext *ctx){
 
-}
+}*/
 
 void MyListener::enterProgram(swlParser::ProgramContext *ctx) {
     cout << "#include <iostream>" << endl << endl
@@ -92,17 +93,26 @@ void MyListener::exitDiv(swlParser::DivContext *ctx) {
     cout << string(indent, ' ') << name << " = " << name << "/" << val << ";" << endl;
 }
 
+void MyListener::exitBoolean(swlParser::BooleanContext *ctx) {
+
+  if(ctx->LOGIC()!=NULL)
+  {
+    string logic;
+    if(ctx->LOGIC()->getText() == " and ") logic = "&&";
+    else if(ctx->LOGIC()->getText() == " or ") logic = "||";
+    else if(ctx->LOGIC()->getText() == " not ") logic = "!";
+
+    cout << logic;
+  }
+}
+
 void MyListener::exitCondition(swlParser::ConditionContext *ctx) {
 
   if(ctx->CARATTERI()!=NULL)
   {
-    string logic;
-    if(ctx->CARATTERI()->getText() == "and") logic = "&&";
-    else if(ctx->CARATTERI()->getText() == "or") logic = "||";
-    else if(ctx->CARATTERI()->getText() == "not") logic = "!";
-
-    cout << logic;
+    cout << ' ' << ctx->CARATTERI()->getText() << ' ';
   }
+
 }
 
 void MyListener::exitVar(swlParser::VarContext *ctx) {
