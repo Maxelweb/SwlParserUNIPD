@@ -21,13 +21,15 @@ void MyListener::exitProgram(swlParser::ProgramContext *ctx) {
 }
 
 void MyListener::enterWhiledo(swlParser::WhiledoContext *ctx){
-  cout << string(indent, ' ') <<"while (";
-    cout <<"){"<<endl;
+  cout << string(indent, ' ') << "while (";
+  if(ctx->boolean() != NULL)
+    cout << ctx->boolean()->getText();
+  cout << "){" << endl;
     indent += 4;
 }
 
 void MyListener::exitWhiledo(swlParser::WhiledoContext *ctx){
-    cout << string(indent, ' ') << "}";
+    cout << endl << string(indent, ' ') << "}";
     indent -= 4;
 }
 
@@ -104,6 +106,8 @@ void MyListener::exitDiv(swlParser::DivContext *ctx) {
     cout << string(indent, ' ') << name << " = " << name << "/" << val << ";" << endl;
 }
 
+
+/*
 void MyListener::exitBoolean(swlParser::BooleanContext *ctx) {
 
   if(ctx->LOGIC()!=NULL)
@@ -113,7 +117,7 @@ void MyListener::exitBoolean(swlParser::BooleanContext *ctx) {
     else if(ctx->LOGIC()->getText() == " or ") logic = "||";
     else if(ctx->LOGIC()->getText() == " not ") logic = "!";
 
-    cout << logic;
+    ctx->LOGIC()->getText() = logic;
   }
 }
 
@@ -121,10 +125,14 @@ void MyListener::exitCondition(swlParser::ConditionContext *ctx) {
 
   if(ctx->CARATTERI()!=NULL)
   {
-    cout << ' ' << ctx->CARATTERI()->getText() << ' ';
+    cout << "OK";
+    //string x;
+    //return (" AAA " + ctx->CARATTERI()->getText() + " BBB ");
+    ctx->CARATTERI()->getText() = "><<>"; 
+    //cout << ctx->CARATTERI()->getText(); 
   }
-
 }
+
 
 void MyListener::exitVar(swlParser::VarContext *ctx) {
 
@@ -137,3 +145,4 @@ void MyListener::exitVar(swlParser::VarContext *ctx) {
     cout << ' ' << ctx->NUMBER()->getText() << ' ';
   }
 }
+*/
