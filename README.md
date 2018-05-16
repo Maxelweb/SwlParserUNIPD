@@ -8,7 +8,7 @@ Developed by Jatus93 & Maxel
 - [x] il ciclo while funziona
 - [x] il costrutto if-then-else funziona
 - [x] operazioni di moltiplicazione e divisione funzionano
-- [ ] **`Da Verificare!96`** espressioni booleane complesse che utilizzano gli operatori logici and, or, not e le parentesi
+- [ ] **`Da verificare!`** espressioni booleane complesse che utilizzano gli operatori logici and, or, not e le parentesi
 
 
 ## Quick links 
