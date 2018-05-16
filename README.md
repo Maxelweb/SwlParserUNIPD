@@ -23,7 +23,7 @@ Developed by Jatus93 (Gianmarco Pettinato) & Maxel ([Mariano Sciacco](https://ma
 2. Avviare `source setup.sh`
 3. `antlr4 -Dlanguage=Cpp swl.g4`
 4. `make syncheck`
-5. `syncheck ./example.swl` --> controlla se la sintassi sia corretta
+5. `./syncheck example.swl` --> controlla se la sintassi sia corretta
 6. `make translate`
 7. `./translate example.swl` --> fa vedere la traduzione
 
