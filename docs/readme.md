@@ -1,12 +1,18 @@
 # Swl Parser / UNIPD
 
 Progetto SWL parser Maggio 2018.
-Il progetto è attualmente in fase di sviluppo.
+**Il progetto è attualmente in fase di sviluppo.**
 
 ## Relatori
 
 - Gianmarco Pettinato
 - Mariano Sciacco
+
+## Linguaggio SWL implementato
+
+- [Sintassi del linguaggio](syntax)
+- Esempio 1 - In sviluppo
+- Esempio 2 - In sviluppo
 
 
 ## Strutturamento del progetto
