@@ -27,6 +27,8 @@ Developed by Jatus93 (Gianmarco Pettinato) & Maxel ([Mariano Sciacco](https://ma
 6. `make translate`
 7. `./translate example.swl` --> fa vedere la traduzione
 
+- Per la pulizia dopo l'utilizzo del make: `make clean` e `make distclean`
+
 ## Files
 
 - `example.swl` --> File SWL col codice da scrivere
