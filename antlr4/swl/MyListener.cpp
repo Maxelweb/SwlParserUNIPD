@@ -22,10 +22,15 @@ void MyListener::exitProgram(swlParser::ProgramContext *ctx) {
 
 void MyListener::enterWhiledo(swlParser::WhiledoContext *ctx){
   cout << string(indent, ' ') << "while (";
-  if(ctx->boolean() != NULL)
+  /*if(ctx->boolean() != NULL)
     cout << ctx->boolean()->getText();
   cout << "){" << endl;
-    indent += 4;
+    indent += 4;*/
+}
+
+void MyListener::exitWdo(swlParser::WdoContext *ctx){
+  cout <<"){"<<endl;
+  indent += 4;
 }
 
 void MyListener::exitWhiledo(swlParser::WhiledoContext *ctx){
@@ -128,8 +133,8 @@ void MyListener::exitCondition(swlParser::ConditionContext *ctx) {
     cout << "OK";
     //string x;
     //return (" AAA " + ctx->CARATTERI()->getText() + " BBB ");
-    ctx->CARATTERI()->getText() = "><<>"; 
-    //cout << ctx->CARATTERI()->getText(); 
+    ctx->CARATTERI()->getText() = "><<>";
+    //cout << ctx->CARATTERI()->getText();
   }
 }
 

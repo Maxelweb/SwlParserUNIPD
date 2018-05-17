@@ -11,8 +11,7 @@ using namespace std;
 class  MyListener : public swlBaseListener {
 private:
   int indent = 0;
-  string logicTranslate(string raw);
-
+  
 public:
 
   void enterProgram(swlParser::ProgramContext *ctx);
@@ -23,6 +22,7 @@ public:
   void exitPrint(swlParser::PrintContext *ctx);
 
   void enterWhiledo(swlParser::WhiledoContext *ctx);
+  void exitWdo(swlParser::WdoContext *ctx);
   void exitWhiledo(swlParser::WhiledoContext *ctx);
 
   /*void enterIfthenelse(swlParser::IfContext *ctx);
