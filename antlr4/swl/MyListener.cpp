@@ -22,23 +22,6 @@ void MyListener::exitProgram(swlParser::ProgramContext *ctx) {
 
 void MyListener::enterWhiledo(swlParser::WhiledoContext *ctx){
   cout << string(indent, ' ') << "while (";
-   // if(ctx->boolean() != NULL)
-      //  cout << ctx->boolean()->getText();
-    /*
-  if(cty->LOGIC()!=NULL)
-  {
-    string logic;
-    if(cty->LOGIC()->getText() == " and ") logic = "&&";
-    else if(cty->LOGIC()->getText() == " or ") logic = "||";
-    else if(cty->LOGIC()->getText() == " not ") logic = "!";
-    else logic = cty->LOGIC()->getText();
-
-    cout << " " << logic << " ";
-  }
-  /*if(ctx->boolean() != NULL)
-    cout << ctx->boolean()->getText();
-  cout << "){" << endl;
-    indent += 4;*/
 }
 
 void MyListener::exitWdo(swlParser::WdoContext *ctx){
@@ -127,31 +110,13 @@ void MyListener::exitDiv(swlParser::DivContext *ctx) {
 
 void MyListener::enterBoolean(swlParser::BooleanContext *ctx) {
 
-  //int sizeCond = ctx->condition().size();
-  //int sizeLog = ctx->LOGIC().size();
-  //int sizeNot = ctx->NOTNOT() != NULL ? ctx->NOTNOT().size() : 0;
-  //cout << "(SIZEA=" << ctx->condition().size() << ")";
-  //cout << "(SIZEB=" << ctx->LOGIC().size() << ")";
-
- /* if(ctx->NOTNOT().size() > 0)
-    if(ctx->NOTNOT(0)->getText() == " not " || ctx->NOTNOT(0)->getText() == "not ") 
-      cout << "!";*/
-
 
   int sizeNot = ctx->NOTNOT().size();
-
- // cout << "(SIZEN=" << ctx->NOTNOT().size() << ")";
-
-/*
-  if(sizeNot == 1)
-      cout << ctx->NOTNOT(0)->getText();
-*/
+ 
 
   if(sizeNot >= 1)
-          for(int y=0; y<sizeNot; y++)
-          {
-              cout << ctx->NOTNOT(y)->getText() << "(";
-          }
+    for(int y=0; y<sizeNot; y++)
+      cout << ctx->NOTNOT(y)->getText() << "(";
 
 }
 
@@ -159,35 +124,25 @@ void MyListener::enterBoolean(swlParser::BooleanContext *ctx) {
 
 void MyListener::exitBoolean(swlParser::BooleanContext *ctx) {
 
-// cout << ctx->condition().size() << " | " ; // DEBUG
 
-    //if(ctx->condition() != NULL)
-
-  //int x = 0;
   int sizeCond = ctx->condition().size();
   int sizeLog = ctx->LOGIC().size();
-  //int sizeNot = ctx->NOTNOT() != NULL ? ctx->NOTNOT().size() : 0;
-  //cout << "(SIZEA=" << ctx->condition().size() << ")";
-  //cout << "(SIZEB=" << ctx->LOGIC().size() << ")";
-
-  /*if(!sizeLog && !sizeCond && ctx->NOTNOT() != NULL)
-    if(ctx->NOTNOT()->getText() == " not " || ctx->NOTNOT()->getText() == "not ") 
-      cout << "!";*/
 
   int sizeNot = ctx->NOTNOT().size();
 
-  //cout << "(SIZEN=" << ctx->NOTNOT().size() << ")";
 
-  //if(sizeNot == 1)
-     // cout << ctx->NOTNOT(0)->getText();
+  //if(ctx->LEB() != NULL) // LE PARENTESI IN APERTURA SONO ERRATE
+  //  cout << "(";
 
   if(sizeLog)
       cout << ctx->condition(0)->getText(); 
-
+  
   if(sizeCond > 1)
   {
+
     for(int i=1; i < sizeCond; i++)
     { 
+
       string logic;
       if(ctx->LOGIC(i-1)->getText() == " and ") logic = " && ";
       else if(ctx->LOGIC(i-1)->getText() == " or ") logic = " || ";
@@ -195,41 +150,17 @@ void MyListener::exitBoolean(swlParser::BooleanContext *ctx) {
 
       cout << ctx->condition(i)->getText(); 
     }
+
   }
+
+  //if(ctx->RIB() != NULL) // LE PARENTESI IN CHIUSURA SONO ERRATE
+  //  cout << ")";
+
 
 
   if(sizeNot >= 1)
       for(int y=0; y<sizeNot; y++)
             cout << ")";
-
-/*if(sizeNot > 1)
-          for(int y=1; y<sizeNot; y++)
-            cout << ctx->NOTNOT(y)->getText();
-
-
-   /*   if(ctx->condition().size() >= 1)
-        {
-         x++; 
-         cout << "(X=" << x << ")";
-         cout << ctx->condition(0)->getText();
-        }
-      /*else if(ctx->condition().size() == 1)
-        cout << ctx->condition()->getText(); */
-/*
-    if(ctx->LOGIC()!=NULL)
-    {
-      x++;
-      cout << "(X=" << x << ")";
-      string logic;
-      if(ctx->LOGIC()->getText() == " and ") logic = " && ";
-      else if(ctx->LOGIC()->getText() == " or ") logic = " || ";
-      else if(ctx->LOGIC()->getText() == " not ") logic = " ! ";
-      cout << logic;
-    }
-
-   // if(ctx->condition() != NULL)
-    /*  if(ctx->condition().size() > 1)
-         cout << ctx->condition(1)->getText();*/
 
 }
 
