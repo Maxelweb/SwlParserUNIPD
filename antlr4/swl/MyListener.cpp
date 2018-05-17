@@ -133,9 +133,25 @@ void MyListener::enterBoolean(swlParser::BooleanContext *ctx) {
   //cout << "(SIZEA=" << ctx->condition().size() << ")";
   //cout << "(SIZEB=" << ctx->LOGIC().size() << ")";
 
-  if(ctx->NOTNOT().size() > 0)
+ /* if(ctx->NOTNOT().size() > 0)
     if(ctx->NOTNOT(0)->getText() == " not " || ctx->NOTNOT(0)->getText() == "not ") 
-      cout << "!(";
+      cout << "!";*/
+
+
+  int sizeNot = ctx->NOTNOT().size();
+
+ // cout << "(SIZEN=" << ctx->NOTNOT().size() << ")";
+
+/*
+  if(sizeNot == 1)
+      cout << ctx->NOTNOT(0)->getText();
+*/
+
+  if(sizeNot >= 1)
+          for(int y=0; y<sizeNot; y++)
+          {
+              cout << ctx->NOTNOT(y)->getText() << "(";
+          }
 
 }
 
@@ -158,14 +174,20 @@ void MyListener::exitBoolean(swlParser::BooleanContext *ctx) {
     if(ctx->NOTNOT()->getText() == " not " || ctx->NOTNOT()->getText() == "not ") 
       cout << "!";*/
 
+  int sizeNot = ctx->NOTNOT().size();
+
+  //cout << "(SIZEN=" << ctx->NOTNOT().size() << ")";
+
+  //if(sizeNot == 1)
+     // cout << ctx->NOTNOT(0)->getText();
+
   if(sizeLog)
-  cout << ctx->condition(0)->getText(); 
+      cout << ctx->condition(0)->getText(); 
 
   if(sizeCond > 1)
   {
     for(int i=1; i < sizeCond; i++)
     { 
-
       string logic;
       if(ctx->LOGIC(i-1)->getText() == " and ") logic = " && ";
       else if(ctx->LOGIC(i-1)->getText() == " or ") logic = " || ";
@@ -176,9 +198,13 @@ void MyListener::exitBoolean(swlParser::BooleanContext *ctx) {
   }
 
 
-if(ctx->NOTNOT().size() > 0)
-    if(ctx->NOTNOT(0)->getText() == " not " || ctx->NOTNOT(0)->getText() == "not ") 
-      cout << ")";
+  if(sizeNot >= 1)
+      for(int y=0; y<sizeNot; y++)
+            cout << ")";
+
+/*if(sizeNot > 1)
+          for(int y=1; y<sizeNot; y++)
+            cout << ctx->NOTNOT(y)->getText();
 
 
    /*   if(ctx->condition().size() >= 1)
