@@ -127,15 +127,15 @@ void MyListener::exitDiv(swlParser::DivContext *ctx) {
 
 void MyListener::enterBoolean(swlParser::BooleanContext *ctx) {
 
- /* int sizeCond = ctx->condition().size();
-  int sizeLog = ctx->LOGIC().size();
+  //int sizeCond = ctx->condition().size();
+  //int sizeLog = ctx->LOGIC().size();
   //int sizeNot = ctx->NOTNOT() != NULL ? ctx->NOTNOT().size() : 0;
   //cout << "(SIZEA=" << ctx->condition().size() << ")";
   //cout << "(SIZEB=" << ctx->LOGIC().size() << ")";
 
-  if(!sizeLog && !sizeCond && ctx->NOTNOT() != NULL)
-    if(ctx->NOTNOT()->getText() == " not " || ctx->NOTNOT()->getText() == "not ") 
-      cout << "!";*/
+  if(ctx->NOTNOT().size() > 0)
+    if(ctx->NOTNOT(0)->getText() == " not " || ctx->NOTNOT(0)->getText() == "not ") 
+      cout << "!(";
 
 }
 
@@ -174,6 +174,12 @@ void MyListener::exitBoolean(swlParser::BooleanContext *ctx) {
       cout << ctx->condition(i)->getText(); 
     }
   }
+
+
+if(ctx->NOTNOT().size() > 0)
+    if(ctx->NOTNOT(0)->getText() == " not " || ctx->NOTNOT(0)->getText() == "not ") 
+      cout << ")";
+
 
    /*   if(ctx->condition().size() >= 1)
         {
