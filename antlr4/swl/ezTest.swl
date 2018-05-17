@@ -1,6 +1,6 @@
 begin
 	let Check be 0
-	while (Check < 10) do
+	while (Check or Check<10 or Check>4) do
 		add 1 to Check
 	end
 end

@@ -15,12 +15,14 @@ wdo        : 'do';
 ifthenelse : 'if' boolean ithen statement+ 'end'| 'if' boolean ithen statement+ ielse statement+ 'end' ;
 ithen      : 'then';
 ielse      : 'else';
-boolean    : condition | condition LOGIC condition | condition LOGIC boolean | boolean LOGIC condition | boolean LOGIC boolean | '(' boolean+ ')' | LOGIC '(' boolean+ ')';
-condition  : (NUMBER|ID) | '(' (NUMBER|ID) CARATTERI (NUMBER|ID) ')' | (NUMBER|ID) CARATTERI (NUMBER|ID) | LOGIC (condition);
+boolean    : NOTNOT* condition (LOGIC NOTNOT* condition)* | '(' boolean ')'; 
+condition  : (NUMBER|ID) | '(' (NUMBER|ID) CARATTERI (NUMBER|ID) ')' | (NUMBER|ID) CARATTERI (NUMBER|ID);
 
 ID        : [a-zA-Z]+ ;
 NUMBER    : [0-9]+ ;
 CARATTERI : [<>=!]+ ;
-LOGIC     : ' and '|' or '|' not ';
+LOGIC     : ' and '|' or ';
+NOTNOT 	  : ' not ' | 'not ';
 WS        : [ \r\n\t]+ -> skip;
 ErrorChar : . ;
+			
