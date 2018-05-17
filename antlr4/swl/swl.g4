@@ -15,9 +15,8 @@ wdo        : 'do';
 ifthenelse : 'if' boolean ithen statement+ 'end'| 'if' boolean ithen statement+ ielse statement+ 'end' ;
 ithen      : 'then';
 ielse      : 'else';
-boolean    : condition | condition LOGIC condition | condition LOGIC boolean | boolean LOGIC condition | boolean LOGIC boolean | '(' boolean+ ')' | 'not (' boolean+ ')';
-condition  : var | '(' var CARATTERI var ')' | var CARATTERI var;
-var        : (NUMBER|ID) | 'not' (NUMBER|ID);
+boolean    : condition | condition LOGIC condition | condition LOGIC boolean | boolean LOGIC condition | boolean LOGIC boolean | '(' boolean+ ')' | LOGIC '(' boolean+ ')';
+condition  : (NUMBER|ID) | '(' (NUMBER|ID) CARATTERI (NUMBER|ID) ')' | (NUMBER|ID) CARATTERI (NUMBER|ID) | LOGIC (condition);
 
 ID        : [a-zA-Z]+ ;
 NUMBER    : [0-9]+ ;

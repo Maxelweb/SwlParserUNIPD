@@ -11,7 +11,7 @@ using namespace std;
 class  MyListener : public swlBaseListener {
 private:
   int indent = 0;
-  
+
 public:
 
   void enterProgram(swlParser::ProgramContext *ctx);
@@ -33,10 +33,7 @@ public:
   void exitSub(swlParser::SubContext *ctx);
   void exitDiv(swlParser::DivContext *ctx);
 
-
-
-  //void exitBoolean(swlParser::BooleanContext *ctx);
-  //void exitCondition(swlParser::ConditionContext *ctx);
-  //void exitVar(swlParser::VarContext *ctx);
+  void exitBoolean(swlParser::BooleanContext *ctx);
+  void exitCondition(swlParser::ConditionContext *ctx);
 
 };
