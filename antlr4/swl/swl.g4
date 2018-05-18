@@ -16,26 +16,24 @@ ifthenelse  : 'if' boolean ithen statement+ 'end'
 			| 'if' boolean ithen statement+ ielse statement+ 'end' ;
 ithen       : 'then';
 ielse       : 'else';
+
 boolean     :	condition (LOGIC condition)* 
-			|  	(condition LOGIC)* LEB condition (LOGIC condition)* RIB (LOGIC condition)*
-			| 	NOTNOT* '(' boolean ')'
+			|  	(condition LOGIC)* '(' condition (LOGIC condition)* ')' (LOGIC condition)*
+			| 	NOT* '(' boolean ')'
 			; 
 
-condition  : 
-				NOTNOT* (NUMBER|ID) 
-			| 	NOTNOT* '(' NOTNOT* (NUMBER|ID) ')' 
-			| 	NOTNOT* (NUMBER|ID) CARATTERI NOTNOT* (NUMBER|ID)
-			| 	NOTNOT* '(' NOTNOT* (NUMBER|ID) CARATTERI NOTNOT* (NUMBER|ID) ')'
-			| 	NOTNOT* '(' condition ')'
+condition   : 	NOT* (NUMBER|ID) 
+			| 	NOT* '(' NOT* (NUMBER|ID) ')' 
+			| 	NOT* (NUMBER|ID) OPCONF NOT* (NUMBER|ID)
+			| 	NOT* '(' NOT* (NUMBER|ID) OPCONF NOT* (NUMBER|ID) ')'
+			| 	NOT* '(' condition ')'
 			;
 
 ID          : 	[a-zA-Z]+ ;
 NUMBER      : 	[0-9]+ ;
-CARATTERI   : 	'>=' | '<=' | '>' | '<' | '!=' | '==' ;
-LOGIC       : 	' and '|' or ';
-NOTNOT 	    : 	[!]+;
-LEB 		:   '(';
-RIB 		:   ')'; 
+OPCONF	    : 	'>=' | '<=' | '>' | '<' | '!=' | '==' ;
+LOGIC       : 	'&&'|'||';
+NOT 	    : 	[!]+;
 WS          : 	[ \r\n\t]+ -> skip;
 ErrorChar   : 	. ;
 			
