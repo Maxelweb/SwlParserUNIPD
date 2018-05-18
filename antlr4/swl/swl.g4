@@ -2,7 +2,7 @@ grammar swl;
 
 program   : 'begin' statement+ 'end';
 
-statement : assign | add | sub | mult | div | print | ifthenelse | whiledo;
+statement : assign | add | sub | mult | div | print | ifthenelse | whiledo ;
 
 assign     : 'let' ID 'be' (NUMBER | ID) ;
 print      : 'print' (NUMBER | ID) ;
@@ -10,17 +10,20 @@ add        : 'add' (NUMBER | ID) 'to' ID ;
 sub        : 'sub' (NUMBER | ID) 'to' ID ;
 mult       : 'mult' (NUMBER | ID) 'to' ID ;
 div        : 'div' (NUMBER | ID) 'to' ID ;
-whiledo    : 'while' boolean wdo statement+ 'end';
+whiledo    : 'while (' boolean ')' wdo statement+ 'end';
 wdo        : 'do';
-ifthenelse : 'if' boolean ithen statement+ 'end'| 'if' boolean ithen statement+ ielse statement+ 'end' ;
-ithen      : 'then';
-ielse      : 'else';
-boolean    : condition | condition LOGIC condition | condition LOGIC boolean | boolean LOGIC condition | boolean LOGIC boolean | '(' boolean+ ')' | LOGIC '(' boolean+ ')';
-condition  : (NUMBER|ID) | '(' (NUMBER|ID) CARATTERI (NUMBER|ID) ')' | (NUMBER|ID) CARATTERI (NUMBER|ID) | LOGIC (condition);
+ifthenelse : 'if' boolean ith statement+ 'end'
+           | 'if' boolean ith statement+ iels statement+ 'end' ;
+ith        : 'then';
+iels       : 'else';
+boolean    : NOTNOT*(NUMBER | ID) ((CARATTERI|LOGIC) (NUMBER | ID))*
+           | '(' boolean ')' ((CARATTERI|LOGIC) '(' boolean ')')*
+           | NOTNOT '('boolean')';
 
 ID        : [a-zA-Z]+ ;
 NUMBER    : [0-9]+ ;
-CARATTERI : [<>=!]+ ;
-LOGIC     : ' and '|' or '|' not ';
+CARATTERI : '>=' | '<=' | '>' | '<' | '!=' | '==' ;
+LOGIC     : ' and '|' or ';
+NOTNOT    : 'not '+;
 WS        : [ \r\n\t]+ -> skip;
 ErrorChar : . ;

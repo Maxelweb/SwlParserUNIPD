@@ -1,0 +1,3 @@
+boolean    : condition | condition LOGIC condition | condition LOGIC boolean | boolean LOGIC condition | boolean LOGIC boolean | '(' boolean+ ')' | 'not (' boolean+ ')';
+condition  : var | '(' var CARATTERI var ')' | var CARATTERI var;
+var        : (NUMBER|ID) | 'not' (NUMBER|ID);
