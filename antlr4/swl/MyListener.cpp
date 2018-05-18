@@ -111,42 +111,17 @@ void MyListener::exitDiv(swlParser::DivContext *ctx) {
     cout << string(indent, ' ') << name << " = " << name << "/" << val << ";" << endl;
 }
 
-void MyListener::exitBoolean(swlParser::BooleanContext *ctx) {
-
-  if(ctx->LOGIC()!=NULL)
-  {
-    string logic;
-    if(ctx->LOGIC()->getText() == " and ") logic = "&&";
-    else if(ctx->LOGIC()->getText() == " or ") logic = "||";
-    else if(ctx->LOGIC()->getText() == " not ") logic = "!";
-
-    ctx->LOGIC()->getText() = logic;
-  }
+void MyListener::enterBoolean(swlParser::BooleanContext *ctx) {
+  /*string name;
+  string val;
+  if(ctx->ID() != NULL) {
+      name = ctx->ID(1)->getText();
+      val = ctx->ID(0)->getText();
+  } */
+  cout << "[BEN]" << ctx->size();
 }
 
-void MyListener::exitCondition(swlParser::ConditionContext *ctx) {
-  if(ctx->ID().size() > 1)
-  {
-    cout << ' ' << ctx->ID(0)->getText();
-  }
-  if(ctx->CARATTERI() != NULL)
-  {
-    cout << ' ' << ctx->CARATTERI()->getText() << ' ';
-  }
-  if(ctx->LOGIC() != NULL)
-  {
-    string logic;
-    if(ctx->LOGIC()->getText() == " and ") logic = "&&";
-    else if(ctx->LOGIC()->getText() == " or ") logic = "||";
-    else if(ctx->LOGIC()->getText() == " not ") logic = "!";
-    cout << logic;
-  }
-  if(ctx->ID().size() > 1)
-  {
-    cout << ' ' << ctx->ID(1)->getText();
-  }
-  /*if(ctx->NUMBER() > 1)
-  {
-    cout << ' ' << ctx->NUMBER().getText();
-  }*/
+void MyListener::exitBoolean(swlParser::BooleanContext *ctx) {
+  cout << "[BEX]";
+
 }

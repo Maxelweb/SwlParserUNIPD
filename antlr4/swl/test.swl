@@ -1,0 +1,7 @@
+begin
+   let check be 1
+   let potato be 3
+   while (((check) and (check)) or ((check>1) and (potato<3))) do
+       add 1 to check
+   end
+end

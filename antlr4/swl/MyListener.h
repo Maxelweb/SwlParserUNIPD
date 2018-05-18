@@ -33,7 +33,6 @@ public:
   void exitSub(swlParser::SubContext *ctx);
   void exitDiv(swlParser::DivContext *ctx);
 
+  void enterBoolean(swlParser::BooleanContext *ctx);
   void exitBoolean(swlParser::BooleanContext *ctx);
-  void exitCondition(swlParser::ConditionContext *ctx);
-
 };

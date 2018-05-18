@@ -18,7 +18,8 @@ ith        : 'then';
 iels       : 'else';
 boolean    : NOTNOT*(NUMBER | ID) ((CARATTERI|LOGIC) (NUMBER | ID))*
            | '(' boolean ')' ((CARATTERI|LOGIC) '(' boolean ')')*
-           | NOTNOT '('boolean')';
+           | NOTNOT '('boolean')'
+           | NOTNOT boolean;
 
 ID        : [a-zA-Z]+ ;
 NUMBER    : [0-9]+ ;
