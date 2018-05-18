@@ -4,13 +4,17 @@ begin
 	let y be 20
 	let z be 10
 	mult x to x
-	mult y to 3
+	mult 3 to y
 	let equation be x
 	add y to equation
 	div z to equation	
 
 	if check then
 		print equation
+
+		if !check && !(x > 0) then 
+			print x
+		end
 	else
 		while equation > 20 do
 			sub 1 to equation

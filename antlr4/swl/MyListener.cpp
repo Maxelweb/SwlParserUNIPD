@@ -1,13 +1,25 @@
 // Generated from swl.g4 by ANTLR 4.7
+
+/* ------------------------------
+ *
+ *	SWL PARSER PROJECT - UNIPD
+ *	swl.debug.ovh (V-1.0)
+ *
+ * ------------------------------
+ */
+
+
 #include <iostream>
 #include "MyListener.h"
 
 using namespace std;
 
 /*
-string MyListener::conditionCheck(swlParser::ProgramContext *ctx){
+ *
+ *	PROGRAM HEADER / FOOTER
+ *
+ */
 
-}*/
 
 void MyListener::enterProgram(swlParser::ProgramContext *ctx) {
     cout << "#include <iostream>" << endl << endl
@@ -20,18 +32,63 @@ void MyListener::exitProgram(swlParser::ProgramContext *ctx) {
     cout << "}" << endl;
 }
 
+/*
+ *
+ *	 WHILE-DO
+ *
+ */
+
 void MyListener::enterWhiledo(swlParser::WhiledoContext *ctx){
-  cout << string(indent, ' ') << "while (";
-  if(ctx->boolean() != NULL)
-    cout << ctx->boolean()->getText();
-  cout << "){" << endl;
-    indent += 4;
+  	cout << string(indent, ' ') << "while (";
+  	string cond = ctx->boolean()->getText();
+  	cout << cond;
+}
+
+void MyListener::exitWdo(swlParser::WdoContext *ctx){
+  	cout << ") {" << endl;
+  	indent += 4;
 }
 
 void MyListener::exitWhiledo(swlParser::WhiledoContext *ctx){
-    cout << endl << string(indent, ' ') << "}";
     indent -= 4;
+    cout << string(indent, ' ') << "}" << endl;
 }
+
+/*
+ *
+ *	 IF-THEN-ELSE
+ *
+ */
+
+void MyListener::enterIfthenelse(swlParser::IfthenelseContext *ctx){
+  	cout << string(indent, ' ') << "if (";
+  	string cond = ctx->boolean()->getText();
+  	cout << cond;
+}
+
+void MyListener::enterIthen(swlParser::IthenContext *ctx){
+  	cout << ") {" << endl;
+  	indent += 4;
+}
+
+void MyListener::exitIelse(swlParser::IelseContext *ctx){
+		indent -= 4;
+  	cout << string(indent, ' ') << "} else {" << endl;
+  	indent += 4;
+}
+
+void MyListener::exitIfthenelse(swlParser::IfthenelseContext *ctx){
+    indent -= 4;
+    cout << string(indent, ' ') << "}" << endl;
+}
+
+
+/*
+ *
+ *	 ASSIGNMENT AND PRINT
+ *
+ */
+
 
 void MyListener::exitAssign(swlParser::AssignContext *ctx) {
     string name = ctx->ID(0)->getText();
@@ -53,6 +110,13 @@ void MyListener::exitPrint(swlParser::PrintContext *ctx) {
     }
     cout << string(indent, ' ') << "cout << " << val << " << endl;" << endl;
 }
+
+/*
+ *
+ *	 BASE MATH OPERATIONS
+ *
+ */
+
 
 void MyListener::exitAdd(swlParser::AddContext *ctx) {
     string name;
@@ -105,44 +169,3 @@ void MyListener::exitDiv(swlParser::DivContext *ctx) {
     }
     cout << string(indent, ' ') << name << " = " << name << "/" << val << ";" << endl;
 }
-
-
-/*
-void MyListener::exitBoolean(swlParser::BooleanContext *ctx) {
-
-  if(ctx->LOGIC()!=NULL)
-  {
-    string logic;
-    if(ctx->LOGIC()->getText() == " and ") logic = "&&";
-    else if(ctx->LOGIC()->getText() == " or ") logic = "||";
-    else if(ctx->LOGIC()->getText() == " not ") logic = "!";
-
-    ctx->LOGIC()->getText() = logic;
-  }
-}
-
-void MyListener::exitCondition(swlParser::ConditionContext *ctx) {
-
-  if(ctx->CARATTERI()!=NULL)
-  {
-    cout << "OK";
-    //string x;
-    //return (" AAA " + ctx->CARATTERI()->getText() + " BBB ");
-    ctx->CARATTERI()->getText() = "><<>"; 
-    //cout << ctx->CARATTERI()->getText(); 
-  }
-}
-
-
-void MyListener::exitVar(swlParser::VarContext *ctx) {
-
-  if(ctx->ID() != NULL)
-  {
-    cout << ' ' << ctx->ID()->getText() << ' ';
-  }
-  else if(ctx->NUMBER()!=NULL)
-  {
-    cout << ' ' << ctx->NUMBER()->getText() << ' ';
-  }
-}
-*/
