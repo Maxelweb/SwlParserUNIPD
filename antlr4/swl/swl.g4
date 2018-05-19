@@ -10,21 +10,23 @@ add        : 'add' (NUMBER | ID) 'to' ID ;
 sub        : 'sub' (NUMBER | ID) 'to' ID ;
 mult       : 'mult' (NUMBER | ID) 'to' ID ;
 div        : 'div' (NUMBER | ID) 'to' ID ;
-whiledo    : 'while (' boolean ')' wdo statement+ 'end';
+whiledo    : 'while' boolean wdo statement+ 'end';
 wdo        : 'do';
 ifthenelse : 'if' boolean ith statement+ 'end'
            | 'if' boolean ith statement+ iels statement+ 'end' ;
 ith        : 'then';
 iels       : 'else';
-boolean    : NOTNOT*(NUMBER | ID) ((CARATTERI|LOGIC) (NUMBER | ID))*
-           | '(' boolean ')' ((CARATTERI|LOGIC) '(' boolean ')')*
-           | NOTNOT '('boolean')'
-           | NOTNOT boolean;
 
-ID        : [a-zA-Z]+ ;
-NUMBER    : [0-9]+ ;
-CARATTERI : '>=' | '<=' | '>' | '<' | '!=' | '==' ;
-LOGIC     : ' and '|' or ';
-NOTNOT    : 'not '+;
-WS        : [ \r\n\t]+ -> skip;
-ErrorChar : . ;
+boolean    : BR (NUMBER|ID) ((CARATTERI|logic) (NUMBER|ID))* BR
+           | BR boolean ((CARATTERI|logic) boolean)* BR;
+
+logic      : 'and' | 'or' | 'not';
+
+
+
+ID         : [a-zA-Z]+ ;
+NUMBER     : [0-9]+ ;
+BR         : '('|')';
+CARATTERI  : '>=' | '<=' | '>' | '<' | '!=' | '==' ;
+WS         : [ \r\n\t]+ -> skip;
+ErrorChar  : . ;

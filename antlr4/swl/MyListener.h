@@ -35,4 +35,10 @@ public:
 
   void enterBoolean(swlParser::BooleanContext *ctx);
   void exitBoolean(swlParser::BooleanContext *ctx);
+  void enterLogic(swlParser::LogicContext *ctx);
+  //void exitBoolean(swlParser::BooleanContext *ctx);
+  //void enterCondition(swlParser::ConditionContext *ctx);
+  //void exitCondition(swlParser::ConditionContext *ctx);
+  //void enterVar(swlParser::VarContext *ctx);
+  //void exitVar(swlParser::VarContext *ctx);
 };

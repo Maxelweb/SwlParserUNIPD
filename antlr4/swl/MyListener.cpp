@@ -110,18 +110,87 @@ void MyListener::exitDiv(swlParser::DivContext *ctx) {
     }
     cout << string(indent, ' ') << name << " = " << name << "/" << val << ";" << endl;
 }
-
 void MyListener::enterBoolean(swlParser::BooleanContext *ctx) {
-  /*string name;
+  string name;
   string val;
-  if(ctx->ID() != NULL) {
-      name = ctx->ID(1)->getText();
-      val = ctx->ID(0)->getText();
-  } */
-  cout << "[BEN]" << ctx->size();
+  cout << string(indent, ' ') <<'{';
+  indent++;
+  cout<<endl<< "ENTER BOOL"<<endl;
+  cout<<endl<< ctx->boolean().size()<<endl;
+  cout<<endl<< ctx->ID().size()<<endl;
+  cout<<endl<< ctx->NUMBER().size()<<endl;
+  cout<<endl<< ctx->BR().size()<<endl;
+  cout<<endl<< ctx->CARATTERI().size()<<endl;
+  cout<<endl<< ctx->logic().size()<<endl;
+
 }
 
 void MyListener::exitBoolean(swlParser::BooleanContext *ctx) {
-  cout << "[BEX]";
+  cout<<endl<< "EXIT BOOL"<<endl;
+  cout << string(indent, ' ') <<'}';
+  indent--;
+}
+
+void MyListener::enterLogic(swlParser::LogicContext *ctx) {
+  cout<<ctx->getText();
+}
+
+
+/*
+void MyListener::enterBoolean(swlParser::BooleanContext *ctx) {
+  //cout<<endl<<"Debug Enter boolean"<<endl;
+  cout<<'(';
+  if(ctx->NOTNOT() != NULL) {
+      cout<<"(!";
+  }
+
+  if(ctx->CARATTERI().size() >= 1) {
+      cout<< ctx->CARATTERI(0)->getText();
+  }
+
+  if(ctx->LOGIC().size() >= 1) {
+      cout<< ctx->LOGIC(0)->getText();
+  }
 
 }
+
+void MyListener::exitBoolean(swlParser::BooleanContext *ctx) {
+  //cout<<endl<<"Debug exit boolean";
+  if(ctx->CARATTERI().size() >= 1) {
+      cout<< ctx->CARATTERI(0)->getText();
+  }
+
+  if(ctx->LOGIC().size() >= 1) {
+      cout<< ctx->LOGIC(0)->getText();
+  }
+  cout<<')';
+}
+
+void MyListener::enterCondition(swlParser::ConditionContext *ctx) {
+  cout<<endl<<"Debug Enter Condition"<<endl;
+}
+
+void MyListener::exitCondition(swlParser::ConditionContext *ctx) {
+  cout<<endl<<"Debug exit Condition"<<endl;
+}
+
+void MyListener::enterVar(swlParser::VarContext *ctx) {
+  //cout<<endl<<"Debug Enter Var" <<endl;
+  string val;
+  if(ctx->NOTNOT() != NULL) {
+      cout<<"(!";
+  }
+  if(ctx->ID() != NULL) {
+      val = ctx->ID()->getText();
+  } else {
+      val = ctx->NUMBER()->getText();
+  }
+  cout<< val;
+}
+
+void MyListener::exitVar(swlParser::VarContext *ctx) {
+  //cout<<endl<<"Debug exit Var";
+  if(ctx->NOTNOT() != NULL) {
+      cout<<')';
+  }
+} */
