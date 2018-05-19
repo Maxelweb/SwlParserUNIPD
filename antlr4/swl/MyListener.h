@@ -31,6 +31,7 @@ public:
   void exitAssign(swlParser::AssignContext *ctx);
 
   void exitPrint(swlParser::PrintContext *ctx);
+  void exitAsk(swlParser::AskContext *ctx);
 
   void enterWhiledo(swlParser::WhiledoContext *ctx);
   void exitWdo(swlParser::WdoContext *ctx);

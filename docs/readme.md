@@ -1,7 +1,10 @@
-# Swl Parser / UNIPD
+# Simple While Language (SWL Parser)
 
-Progetto SWL parser Maggio 2018.
-**Il progetto è attualmente in fase di sviluppo.**
+Progetto SWL parser, realizzato nel Maggio 2018.
+Realizzato per il corso di **Automi e Linguaggi Formali**, Informatica (Scuola di Scienze, Dipartimento di Matematica, Università degli Studi di Padova).
+
+
+> **Il progetto è attualmente in fase di sviluppo.**
 
 ## Relatori
 
@@ -11,7 +14,7 @@ Progetto SWL parser Maggio 2018.
 ## Linguaggio SWL implementato
 
 - [Sintassi del linguaggio](syntax)
-- Esempio 1 - In sviluppo
+- [Esempio 1 - Calcolo del fattoriale](example1)
 - Esempio 2 - In sviluppo
 
 

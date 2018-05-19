@@ -2,10 +2,11 @@ grammar swl;
 
 program     : 	'begin' statement+ 'end';
 
-statement   : 	assign | add | sub | mult | div | print | ifthenelse | whiledo;
+statement   : 	assign | add | sub | mult | div | ask | print | ifthenelse | whiledo;
 
 assign      :   'let' ID 'be' (NUMBER | ID) ;
 print       :   'print' (NUMBER | ID) ;
+ask         :   'ask' ID ;
 add         :   'add' (NUMBER | ID) 'to' ID ;
 sub         :   'sub' (NUMBER | ID) 'to' ID ;
 mult        :   'mult' (NUMBER | ID) 'to' ID ;

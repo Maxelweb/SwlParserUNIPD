@@ -85,7 +85,7 @@ void MyListener::exitIfthenelse(swlParser::IfthenelseContext *ctx){
 
 /*
  *
- *	 ASSIGNMENT AND PRINT
+ *	 ASSIGNMENT, PRINT, INPUT
  *
  */
 
@@ -109,6 +109,14 @@ void MyListener::exitPrint(swlParser::PrintContext *ctx) {
         val = ctx->NUMBER()->getText();
     }
     cout << string(indent, ' ') << "cout << " << val << " << endl;" << endl;
+}
+
+void MyListener::exitAsk(swlParser::AskContext *ctx) {
+    string val;
+    if(ctx->ID() != NULL) {
+        val = ctx->ID()->getText();
+    }
+    cout << string(indent, ' ') << "cin >> " << val << "; " << endl;
 }
 
 /*

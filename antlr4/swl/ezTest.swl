@@ -1,6 +1,18 @@
-begin
-	let Check be 0
-	while !Check || Check && Check do
-		add 1 to Check
+begin 
+	let x be 0
+	ask x
+
+	if x > 100 || (x < 1 && !x) then 
+		print 0
+	else
+		let Fattoriale be 1
+		let y be 1
+
+		while (x >= y) do
+			mult y to Fattoriale 
+			add 1 to y
+		end
+
+		print Fattoriale
 	end
 end

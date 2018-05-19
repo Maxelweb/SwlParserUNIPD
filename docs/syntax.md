@@ -24,6 +24,7 @@ che per accettare plurimi costrutti logici è stata implementata la ricorsione.
 
 Nella parte seguente, per comodità di scrittura, si ometteranno i tag di apertura e si useranno `Foobar` e `Bamboo` come nomi esemplificativi di due qualsiasi variabili (anche con gli stessi valori).
 
+
 ## Apertura e chiusura
 
 Il programma ha in apertura e chiusura due tag fondamentali che vanno inseriti rispettivamente all'inizio e alla fine del programma:
@@ -33,8 +34,8 @@ begin
     [...]
 end
 ```
-
 > **NOTA:** Questi tag vanno usati solo una volta.
+
 
 ### Assegnazione
 
@@ -45,9 +46,18 @@ let Bamboo be Foobar
 > **NOTA:** L'assegnazione si basa sempre sull'utilizzo di variabili di tipo INT. 
 
 
+### Inserimento
+
+```matlab
+let Foobar be 0
+ask Foobar
+```
+> **NOTA:** L'istruzione `ask` è tradotta come `cin >> Foobar` ed è utilizzata come funzione di input.
+
+
 ### Visualizzazione
 
-```mat
+```matlab
 print 5
 print Foobar
 ```
@@ -62,12 +72,14 @@ Le operazioni matematiche implementate sono le seguenti:
 - Moltiplicazione
 - Divisione
 
+
 #### Addizione
 
 ```matlab
 add 7 to Foobar
 add Foobar to Bamboo
 ```
+
 
 #### Sottrazione
 
@@ -76,12 +88,14 @@ sub 4 to Foobar
 sub Foobar to Bamboo
 ```
 
+
 #### Moltiplicazione
 
 ```matlab
 mult 10 to Foobar
 mult Foobar to Bamboo
 ```
+
 
 #### Divisione
 
@@ -90,9 +104,11 @@ div 2 to Foobar
 div Foobar to Bamboo
 ```
 
+
 ### If-then-else
 
 Gli IF-THEN-ELSE sono il fulcro di questo linguaggio. Nella parte condizionale sono state sviluppate diverse combinazioni di statement con operatori logici e operatori di confronto. 
+
 
 #### Operatori di confronto
 
@@ -111,6 +127,7 @@ end
 
 > **NOTA:** L'utilizzo delle parentesi è facoltativo e con modalità identica al C++.
 
+
 #### Condizione singola
 
 - Senza parentesi
@@ -128,6 +145,7 @@ if (Foobar) then
   print 20
 end
 ```
+
 
 #### Condizioni multiple
 
@@ -149,6 +167,7 @@ if (Foobar > 20 || !(Bamboo)) then
   print Foobar
 end
 ```
+
 
 #### If-then-else nidificati con condizioni multiple
 
@@ -176,6 +195,7 @@ else
   end
 end
 ```
+
 
 ### While-do
 
