@@ -132,9 +132,9 @@ end
 #### Condizioni multiple
 
 All'interno degli IF si possono inserire le condizioni logiche più conosciute per connettere più predicati: 
-- `&&`: condizionale logica **and**
-- `||` : condizionale logica **or**
-- `!` : condizionale logica **not**
+- `&&`: condizione logica **and**
+- `||` : condizione logica **or**
+- `!` : condizione logica **not**
 
 ```matlab
 if (Foobar > 20 && Bamboo) then
