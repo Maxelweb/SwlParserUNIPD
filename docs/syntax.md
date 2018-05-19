@@ -24,15 +24,17 @@ che per accettare plurimi costrutti logici è stata implementata la ricorsione.
 
 Nella parte seguente, per comodità di scrittura, si ometteranno i tag di apertura e si useranno `Foobar` e `Bamboo` come nomi esemplificativi di due qualsiasi variabili (anche con gli stessi valori).
 
-## Apertura
+## Apertura e chiusura
 
-Il programma ha in apertura due tag fondamentali che vanno inseriti rispettivamente all'inizio e alla fine del programma:
+Il programma ha in apertura e chiusura due tag fondamentali che vanno inseriti rispettivamente all'inizio e alla fine del programma:
 
 ```matlab
 begin
     [...]
 end
 ```
+
+> **NOTA:** Questi tag vanno usati solo una volta.
 
 ### Assegnazione
 
@@ -114,24 +116,16 @@ end
 - Senza parentesi
 
 ```matlab
-let Flag be 1
-
-if Flag then
-  print 10
-else 
-  print 5
+if Flag == 1 then
+  print 1
 end
 ```
 
 - Con le parentesi
 
 ```matlab
-let Foobar be 20
-
-if (Foobar > 20) then
+if (Foobar) then
   print 20
-else 
-  print Foobar
 end
 ```
 
@@ -193,6 +187,20 @@ while [condizione] do
   [statement]
 end
 ```
+
+
+```matlab
+let i be 0
+let tot be 100
+
+while (i < tot) do
+  add 1 to i
+  sub 1 to tot
+end
+
+print i
+```
+
 
 > **NOTA:** Anche in questo caso, l'utilizzo delle parentesi è facoltativo e con modalità identica al C++.
 > **NOTA 2:** Si rammenta che essendo il while un ciclo, affinchè si possa uscire da esso c'è bisogno di una condizione di falsità.
