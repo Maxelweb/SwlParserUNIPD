@@ -8,13 +8,15 @@ Developed by Jatus93 (Gianmarco Pettinato) & Maxel ([Mariano Sciacco](https://ma
 - [x] il ciclo while funziona
 - [x] il costrutto if-then-else funziona
 - [x] operazioni di moltiplicazione e divisione funzionano
-- [ ] **`Da verificare!`** espressioni booleane complesse che utilizzano gli operatori logici and, or, not e le parentesi
+- [x] **`Da verificare!`** espressioni booleane complesse che utilizzano gli operatori logici and, or, not e le parentesi
 
 
 ## Quick links 
 
 - **[swl.g4](https://github.com/Maxelweb/SwlParserUNIPD/blob/master/antlr4/swl/swl.g4)** - Sintassi del linguaggio
-- **[ezParser.swl](https://github.com/Maxelweb/SwlParserUNIPD/blob/master/antlr4/swl/ezParser.swl)** - Prog. Ezempio 1
+- **[MyListener.cpp](https://github.com/Maxelweb/SwlParserUNIPD/blob/master/antlr4/swl/MyListner.cpp)** - Implementazione .cpp
+- **[MyListener.h](https://github.com/Maxelweb/SwlParserUNIPD/blob/master/antlr4/swl/MyListner.h)** - Implementazione Header
+- **[ezParser.swl](http://swl.debug.ovh/example1)** - Esempio 1 - Calcolo dei Fattoriali
 
 
 ## Installazione e controllo
