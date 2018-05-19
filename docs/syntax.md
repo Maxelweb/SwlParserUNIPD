@@ -21,23 +21,36 @@ end
 L'implementazione è molto basica, ma comunque piuttosto elaborata nella parte condizionale degli IF e dei WHILE, dal momento 
 che per accettare plurimi costrutti logici è stata implementata la ricorsione. 
 
-## Funzionalità
 
-Per comodità di scrittura, `Foobar` e `Bamboo` saranno nomi esemplificativi di due qualsiasi variabile (anche con gli stessi valori).
+Nella parte seguente, per comodità di scrittura, si ometteranno i tag di apertura e si useranno `Foobar` e `Bamboo` come nomi esemplificativi di due qualsiasi variabili (anche con gli stessi valori).
+
+## Apertura
+
+Il programma ha in apertura due tag fondamentali che vanno inseriti rispettivamente all'inizio e alla fine del programma:
+
+```matlab
+begin
+    [...]
+end
+```
 
 ### Assegnazione
 
-```
+```matlab
 let Foobar be 15
 let Bamboo be Foobar
 ```
+> **NOTA:** L'assegnazione si basa sempre sull'utilizzo di variabili di tipo INT. 
+
 
 ### Visualizzazione
 
-```
+```mat
 print 5
 print Foobar
 ```
+> **NOTA:** Il print viene eseguito tramite `cout` con un ritorno a capo dopo la variabile.
+
 
 ### Operazioni matematiche basilari
 
@@ -49,33 +62,33 @@ Le operazioni matematiche implementate sono le seguenti:
 
 #### Addizione
 
-```
+```matlab
 add 7 to Foobar
 add Foobar to Bamboo
 ```
 
 #### Sottrazione
 
-```
+```matlab
 sub 4 to Foobar
 sub Foobar to Bamboo
 ```
 
 #### Moltiplicazione
 
-```
+```matlab
 mult 10 to Foobar
 mult Foobar to Bamboo
 ```
 
 #### Divisione
 
-```
+```matlab
 div 2 to Foobar
 div Foobar to Bamboo
 ```
 
-### IF-THEN-ELSE statement
+### If-then-else
 
 Gli IF-THEN-ELSE sono il fulcro di questo linguaggio. Nella parte condizionale sono state sviluppate diverse combinazioni di statement con operatori logici e operatori di confronto. 
 
@@ -86,6 +99,15 @@ Gli IF-THEN-ELSE sono il fulcro di questo linguaggio. Nella parte condizionale s
 - `==`: uguale
 - `!=`: diverso
 
+```matlab
+if [condizione] then
+  [...]
+(else)
+  [...]
+end
+```
+
+> **NOTA:** L'utilizzo delle parentesi è facoltativo e con modalità identica al C++.
 
 #### Condizione singola
 
@@ -116,15 +138,12 @@ end
 #### Condizioni multiple
 
 All'interno degli IF si possono inserire le condizioni logiche più conosciute per connettere più predicati: 
-- `and` analogo a `&&`
-- `or` analogo a `||`
-- `not` analogo a `!`
+- `&&`: condizionale logica **and**
+- `||` : condizionale logica **or**
+- `!` : condizionale logica **not**
 
 ```matlab
-let Foobar be 24
-let Bamboo be 1
-
-if (Foobar > 20 and Bamboo) then
+if (Foobar > 20 && Bamboo) then
   print 20
 else 
   print Foobar
@@ -132,15 +151,12 @@ end
 ```
 
 ```matlab
-let Foobar be 10
-let Bamboo be 0
-
-if (Foobar > 20 or not Bamboo) then
+if (Foobar > 20 || !(Bamboo)) then
   print Foobar
 end
 ```
 
-#### IF statement nidificati con condizioni multiple
+#### If-then-else nidificati con condizioni multiple
 
 ```matlab
 let Check be 1
@@ -149,7 +165,7 @@ let Vy be 1
 let Vz be 2
 let Tot be 0
 
-if ((Vx < 0 or Vy < 0 or Vz < 0) and Check) then
+if ((Vx < 0 || Vy < 0 || Vz < 0) && Check) then
   print 0
 else
 
@@ -161,9 +177,23 @@ else
     print 1
   else 
     if (Tot != 0) then
-        print -1
+        print 0
     end
   end
 end
 ```
+
+### While-do
+
+Il while-do è esattamente il `while` con una sintassi identica al if-then-else nella parte condizionale.
+
+
+```matlab
+while [condizione] do
+  [statement]
+end
+```
+
+> **NOTA:** Anche in questo caso, l'utilizzo delle parentesi è facoltativo e con modalità identica al C++.
+> **NOTA 2:** Si rammenta che essendo il while un ciclo, affinchè si possa uscire da esso c'è bisogno di una condizione di falsità.
 
