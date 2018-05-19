@@ -17,10 +17,11 @@ ifthenelse : 'if' boolean ith statement+ 'end'
 ith        : 'then';
 iels       : 'else';
 
-boolean    : BR (NUMBER|ID) ((CARATTERI|logic) (NUMBER|ID))* BR
-           | BR boolean ((CARATTERI|logic) boolean)* BR;
+boolean    : lnot* '(' lnot* (NUMBER|ID) ((CARATTERI|logic) lnot*(NUMBER|ID))* ')'
+           | lnot* '(' boolean ((CARATTERI|logic) boolean)* ')';
 
-logic      : 'and' | 'or' | 'not';
+logic      : 'and' | 'or';
+lnot       : 'not';
 
 
 
