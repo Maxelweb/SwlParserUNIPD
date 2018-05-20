@@ -20,6 +20,7 @@ ithen       : 'then';
 ielse       : 'else';
 
 boolean     : var ((opconf|logic) var)*
+            | var ((opconf|logic) boolean)*
             | lnot* lb boolean ((opconf|logic) boolean)* rb;
 
 

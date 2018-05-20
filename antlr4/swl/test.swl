@@ -1,7 +1,6 @@
 begin
     let x be 0
     ask x
-
     if x > 100 or (x < 1 and not x) then
         print 0
     else
