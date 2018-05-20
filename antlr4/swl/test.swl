@@ -1,17 +1,7 @@
 begin
-    let x be 0
-    ask x
-    if x > 100 or (x < 1 and not x) then
-        print 0
-    else
-        let Fattoriale be 1
-        let y be 1
-
-        while (x >= y) do
-            mult y to Fattoriale
-            add 1 to y
-        end
-
-        print Fattoriale
-    end
+   let check be 1
+   let potato be 3
+   while not Check and (Vx < 0 or Vy < 0 or Vz < 0) do
+       add 1 to check
+   end
 end

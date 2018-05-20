@@ -25,7 +25,7 @@ void MyListener::enterWhiledo(swlParser::WhiledoContext *ctx){
 }
 
 void MyListener::exitWdo(swlParser::WdoContext *ctx){
-  cout <<endl<<string(indent, ' ')<<"){"<<endl;
+  cout<<"){"<<endl;
   indent += 4;
 }
 
