@@ -20,7 +20,7 @@ void MyListener::exitProgram(swlParser::ProgramContext *ctx) {
     cout << "}" << endl;
 }
  /*
-  
+
  */
 void MyListener::exitAsk(swlParser::AskContext *ctx) {
     string val;
@@ -154,7 +154,7 @@ void MyListener::enterLogic(swlParser::LogicContext *ctx) {
 }
 
 void MyListener::enterOpconf(swlParser::OpconfContext *ctx){
-    cout <<ctx->getText() << " ";
+    cout << " " << ctx->getText() << " ";
 }
 
 void MyListener::enterVar(swlParser::VarContext *ctx){
@@ -169,11 +169,11 @@ void MyListener::enterVar(swlParser::VarContext *ctx){
     {
       if(ctx->ID() != NULL)
       {
-        cout << ctx->ID()->getText()<<' ';
+        cout << ctx->ID()->getText();
       }
       else
       {
-        cout << ctx->NUMBER()->getText()<<' ';
+        cout << ctx->NUMBER()->getText();
       }
     }
 
