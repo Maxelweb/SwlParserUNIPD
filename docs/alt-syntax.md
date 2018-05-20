@@ -150,12 +150,12 @@ end
 #### Condizioni multiple
 
 All'interno degli IF si possono inserire le condizioni logiche più conosciute per connettere più predicati: 
-- `and`: condizione logica **&&**
-- `or` : condizione logica **||**
-- `not` : condizione logica **!**
+- `&&`: condizione logica **and**
+- `||` : condizione logica **or**
+- `!` : condizione logica **not**
 
 ```matlab
-if (Foobar > 20 and Bamboo) then
+if (Foobar > 20 && Bamboo) then
   print 20
 else 
   print Foobar
@@ -163,7 +163,7 @@ end
 ```
 
 ```matlab
-if (Foobar > 20 or not Bamboo) then
+if (Foobar > 20 || !(Bamboo)) then
   print Foobar
 end
 ```
@@ -178,7 +178,7 @@ let Vy be 1
 let Vz be 2
 let Tot be 0
 
-if ((Vx < 0 or Vy < 0 or Vz < 0) and Check) then
+if ((Vx < 0 || Vy < 0 || Vz < 0) && Check) then
   print 0
 else
 
@@ -213,7 +213,7 @@ end
 let i be 0
 let tot be 100
 
-while i < tot do
+while (i < tot) do
   add 1 to i
   sub 1 to tot
 end

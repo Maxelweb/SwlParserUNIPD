@@ -13,13 +13,13 @@ begin
 	let x be 0
 	ask x
 
-	if x > 100 || (x < 1 && !x) then 
+	if x > 100 or (x < 1 and not x) then 
 		print 0
 	else
 		let Fattoriale be 1
 		let y be 1
 
-		while (x >= y) do
+		while x >= y do
 			mult y to Fattoriale 
 			add 1 to y
 		end
@@ -43,7 +43,7 @@ int main() {
     } else {
         int Fattoriale = 1;
         int y = 1;
-        while ((x >= y)) {
+        while (x >= y){
             Fattoriale = Fattoriale*y;
             y += 1;
         }
@@ -63,4 +63,4 @@ che viene incrementato di 1 fino a quando la variabile y non coincide con x, che
 Il programma traduce direttamente le variabili in INT e ciascuna istruzione inline direttamente. Per quanto concerne gli IF e
 i WHILE, la traduzione che avviene è molto letterale, dal momento che viene tradotta direttamente la parte all'interno delle condizioni, 
 purché queste soddisfino la sintassi simile che si utilizza nel C++.
-Nel caso di utilizzo delle parentesi (vedasi il WHILE), queste ultime verranno comunque doppiate, sebbene il funzionamento del programma non ne risentirà. 
+Nel caso di utilizzo delle parentesi, queste ultime verranno comunque doppiate, sebbene il funzionamento del programma non ne risentirà. 
