@@ -21,17 +21,37 @@ void MyListener::exitProgram(swlParser::ProgramContext *ctx) {
 }
 
 void MyListener::enterWhiledo(swlParser::WhiledoContext *ctx){
-  cout << string(indent, ' ') << "while ";
+  cout << string(indent, ' ') << "while (";
 }
 
 void MyListener::exitWdo(swlParser::WdoContext *ctx){
-  cout <<endl<<string(indent, ' ')<<"{"<<endl;
+  cout <<endl<<string(indent, ' ')<<"){"<<endl;
   indent += 4;
 }
 
 void MyListener::exitWhiledo(swlParser::WhiledoContext *ctx){
-    cout << endl << string(indent, ' ') << "}"<<endl;
+  indent -= 4;
+  cout << endl << string(indent, ' ') << "}"<<endl;
+}
+
+void MyListener::enterIfthenelse(swlParser::IfthenelseContext *ctx){
+  	cout << string(indent, ' ') << "if (";
+}
+
+void MyListener::enterIthen(swlParser::IthenContext *ctx){
+  	cout << ") {" << endl;
+  	indent += 4;
+}
+
+void MyListener::exitIelse(swlParser::IelseContext *ctx){
+		indent -= 4;
+  	cout << string(indent, ' ') << "} else {" << endl;
+  	indent += 4;
+}
+
+void MyListener::exitIfthenelse(swlParser::IfthenelseContext *ctx){
     indent -= 4;
+    cout << string(indent, ' ') << "}" << endl;
 }
 
 void MyListener::exitAssign(swlParser::AssignContext *ctx) {

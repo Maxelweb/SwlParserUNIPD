@@ -25,8 +25,10 @@ public:
   void exitWdo(swlParser::WdoContext *ctx);
   void exitWhiledo(swlParser::WhiledoContext *ctx);
 
-  /*void enterIfthenelse(swlParser::IfContext *ctx);
-  void exitIfthenelse(swlParser::IfContext *ctx);*/
+  void enterIfthenelse(swlParser::IfthenelseContext *ctx);
+  void enterIthen(swlParser::IthenContext *ctx);
+  void exitIelse(swlParser::IelseContext *ctx);
+  void exitIfthenelse(swlParser::IfthenelseContext *ctx);
 
   void exitAdd(swlParser::AddContext *ctx);
   void exitMult(swlParser::MultContext *ctx);
