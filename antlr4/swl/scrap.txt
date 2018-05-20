@@ -11,3 +11,5 @@ boolean    : condition
 condition  : NOTNOT* var ((CARATTERI|LOGIC) var)*;
 
 var        : (NUMBER | ID) | '('NOTNOT (NUMBER | ID)')';
+
+(!(!(!check < !potato ) && !!!(!!!potato != !check )))

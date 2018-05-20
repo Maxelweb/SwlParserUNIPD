@@ -17,17 +17,23 @@ ifthenelse : 'if' boolean ith statement+ 'end'
 ith        : 'then';
 iels       : 'else';
 
-boolean    : lnot* '(' lnot* (NUMBER|ID) ((CARATTERI|logic) lnot*(NUMBER|ID))* ')'
-           | lnot* '(' boolean ((CARATTERI|logic) boolean)* ')';
+boolean    : lnot* lb var ((opconf|logic) var)* rb
+           | lnot* lb boolean ((opconf|logic) boolean)* rb;
+
+
+var        : (NUMBER|ID) | lnot+var;
 
 logic      : 'and' | 'or';
 lnot       : 'not';
+
+lb         : '(';
+rb         : ')';
+
+opconf     : '>=' | '<=' | '>' | '<' | '!=' | '==' ;
 
 
 
 ID         : [a-zA-Z]+ ;
 NUMBER     : [0-9]+ ;
-BR         : '('|')';
-CARATTERI  : '>=' | '<=' | '>' | '<' | '!=' | '==' ;
 WS         : [ \r\n\t]+ -> skip;
 ErrorChar  : . ;
