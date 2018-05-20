@@ -17,11 +17,12 @@ ifthenelse : 'if' boolean ith statement+ 'end'
 ith        : 'then';
 iels       : 'else';
 
-boolean    : lnot* lb var ((opconf|logic) var)* rb
+boolean    : var ((opconf|logic) var)*
+           | lnot* lb var ((opconf|logic) var)* rb
            | lnot* lb boolean ((opconf|logic) boolean)* rb;
 
 
-var        : (NUMBER|ID) | lnot+var;
+var        : (NUMBER|ID) | lnot+ var;
 
 logic      : 'and' | 'or';
 lnot       : 'not';
