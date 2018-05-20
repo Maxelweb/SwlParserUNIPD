@@ -18,7 +18,6 @@ ith        : 'then';
 iels       : 'else';
 
 boolean    : var ((opconf|logic) var)*
-           | lnot* lb var ((opconf|logic) var)* rb
            | lnot* lb boolean ((opconf|logic) boolean)* rb;
 
 
