@@ -1,7 +1,7 @@
 begin
    let check be 1
    let potato be 3
-   while not Check and (Vx < 0 or Vy < 0 or Vz < 0) do
+   while ((y) > (x) and not(z)) do
        add 1 to check
    end
 end

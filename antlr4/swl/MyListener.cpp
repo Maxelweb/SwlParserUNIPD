@@ -19,19 +19,29 @@ void MyListener::enterProgram(swlParser::ProgramContext *ctx) {
 void MyListener::exitProgram(swlParser::ProgramContext *ctx) {
     cout << "}" << endl;
 }
+ /*
+  
+ */
+void MyListener::exitAsk(swlParser::AskContext *ctx) {
+    string val;
+    if(ctx->ID() != NULL) {
+        val = ctx->ID()->getText();
+    }
+    cout << string(indent, ' ') << "cin >> " << val << "; " << endl;
+}
 
 void MyListener::enterWhiledo(swlParser::WhiledoContext *ctx){
-  cout << string(indent, ' ') << "while (";
+    cout << string(indent, ' ') << "while (";
 }
 
 void MyListener::exitWdo(swlParser::WdoContext *ctx){
-  cout<<"){"<<endl;
-  indent += 4;
+    cout<<"){"<<endl;
+    indent += 4;
 }
 
 void MyListener::exitWhiledo(swlParser::WhiledoContext *ctx){
-  indent -= 4;
-  cout << endl << string(indent, ' ') << "}"<<endl;
+    indent -= 4;
+    cout << endl << string(indent, ' ') << "}"<<endl;
 }
 
 void MyListener::enterIfthenelse(swlParser::IfthenelseContext *ctx){
@@ -127,51 +137,51 @@ void MyListener::exitDiv(swlParser::DivContext *ctx) {
     cout << string(indent, ' ') << name << " = " << name << "/" << val << ";" << endl;
 }
 void MyListener::enterBoolean(swlParser::BooleanContext *ctx) {
-  int siznot = ctx->lnot().size();
-  if(siznot >= 1)
-  {
-    for (int i=0; i < siznot;  i++)
-      cout << '!';
+    int siznot = ctx->lnot().size();
+    if(siznot >= 1)
+    {
+      for (int i=0; i < siznot;  i++)
+        cout << '!';
 
-  }
+    }
 }
 
 void MyListener::enterLogic(swlParser::LogicContext *ctx) {
-  if(ctx->getText() == "and")
-    cout << " && ";
-  else
-    cout << " || ";
+    if(ctx->getText() == "and")
+      cout << " && ";
+    else
+      cout << " || ";
 }
 
 void MyListener::enterOpconf(swlParser::OpconfContext *ctx){
-  cout <<ctx->getText() << " ";
+    cout <<ctx->getText() << " ";
 }
 
 void MyListener::enterVar(swlParser::VarContext *ctx){
-  int siznot = ctx->lnot().size();
-  if(siznot >= 1)
-  {
-    for (int i=0; i < siznot;  i++)
-      cout << '!';
-
-  }
-  else
-  {
-    if(ctx->ID() != NULL)
+    int siznot = ctx->lnot().size();
+    if(siznot >= 1)
     {
-      cout << ctx->ID()->getText()<<' ';
+      for (int i=0; i < siznot;  i++)
+        cout << '!';
+
     }
     else
     {
-      cout << ctx->NUMBER()->getText()<<' ';
+      if(ctx->ID() != NULL)
+      {
+        cout << ctx->ID()->getText()<<' ';
+      }
+      else
+      {
+        cout << ctx->NUMBER()->getText()<<' ';
+      }
     }
-  }
 
 }
 void MyListener::enterLb(swlParser::LbContext *ctx)
 {
-  cout<< '(';
+    cout<< '(';
 }
 void MyListener::enterRb(swlParser::RbContext *ctx){
-  cout<< ')';
+    cout<< ')';
 }
