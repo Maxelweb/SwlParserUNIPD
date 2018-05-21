@@ -35,13 +35,13 @@ void MyListener::enterWhiledo(swlParser::WhiledoContext *ctx){
 }
 
 void MyListener::exitWdo(swlParser::WdoContext *ctx){
-    cout<<"){"<<endl;
+    cout<<")"<<endl<<string(indent, ' ') <<"{"<<endl;
     indent += 4;
 }
 
 void MyListener::exitWhiledo(swlParser::WhiledoContext *ctx){
     indent -= 4;
-    cout << endl << string(indent, ' ') << "}"<<endl;
+    cout <<string(indent, ' ')<<"}"<<endl;
 }
 
 void MyListener::enterIfthenelse(swlParser::IfthenelseContext *ctx){

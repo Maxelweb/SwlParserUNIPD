@@ -1,7 +1,9 @@
 begin
-   let check be 1
-   let potato be 3
-   while ((y) > (x) and not(z)) do
-       add 1 to check
+   let number be 0
+   let counter be 0
+   while counter <= 100 do
+       print number
+       add 2 to number
+       add 1 to counter
    end
 end
