@@ -4,6 +4,8 @@
 
 ## Introduzione
 
+Questo semplice programma di esempio tratta della stampa della media dato in input un numero, che andrà sommato alla media precedente. Il programma termina quando viene inserito un numero negativo.
+
 ## SWL Code
 
 ```matlab
@@ -24,7 +26,6 @@ begin
        end
    end
 end
-
 ```
 
 ## Traduzione in C++
@@ -53,9 +54,5 @@ int main() {
         }
     }
 }
-
-
-```
-
 ```
 

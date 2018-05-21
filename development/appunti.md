@@ -1,9 +1,9 @@
 
+# Appunti
 
+## Tipi di IF esistenti
 
-# Tipi di IF esistenti
-
-## if - single cond
+### if - single cond
 
 ```c
 if (1)
@@ -14,14 +14,14 @@ if (!!var)
 
 ---
 
-## if - comparison
+### if - comparison
 
 > Condizione necessaria e sufficiente affinchè ci sia una comparazione è banale.
 
 if (var >/</==/<=/>= var2)
 
 
-## if - condizioni logiche
+### if - condizioni logiche
 
 cond = var | var compare var
 
