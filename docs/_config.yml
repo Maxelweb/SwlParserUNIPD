@@ -1,3 +1,4 @@
 theme: jekyll-theme-leap-day
 title: "SWL Parser, UniPD Project"
 description: "Code Parser developed with antlr4 used to convert code to C++"
+show_downloads: true
