@@ -4,12 +4,18 @@ Progetto SWL parser, realizzato nel Maggio 2018.
 Realizzato per il corso di **Automi e Linguaggi Formali**, Informatica (Scuola di Scienze, Dipartimento di Matematica, Università degli Studi di Padova).
 
 > #### [DOCUMENTAZIONE](http://swl.debug.ovh)
+> #### [SINTASSI E GRAMMATICA](http://swl.debug.ovh/syntax)
 
 
-Sviluppato da:
+Progetto realizzato da:
 
-- Gianmarco Pettinato
-- Mariano Sciacco
+- **Gianmarco Pettinato** (Jatus93 aka Alucard93)
+- **Mariano Sciacco** (Maxel aka Maxelweb)
+
+---
+
+
+# Sviluppo
 
 
 ## Avanzamento implementazione
