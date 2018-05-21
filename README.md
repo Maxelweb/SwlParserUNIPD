@@ -3,11 +3,13 @@
 Progetto SWL parser, realizzato nel Maggio 2018.
 Realizzato per il corso di **Automi e Linguaggi Formali**, Informatica (Scuola di Scienze, Dipartimento di Matematica, Università degli Studi di Padova).
 
+> #### [DOCUMENTAZIONE](http://swl.debug.ovh)
 
-### [DOCUMENTAZIONE](http://swl.debug.ovh)
 
+Sviluppato da:
 
-Developed by Jatus93 (Gianmarco Pettinato) & Maxel (Mariano Sciacco)
+- Gianmarco Pettinato
+- Mariano Sciacco
 
 
 ## Avanzamento implementazione
@@ -20,10 +22,11 @@ Developed by Jatus93 (Gianmarco Pettinato) & Maxel (Mariano Sciacco)
 
 ## Quick links 
 
-- **[swl.g4](https://github.com/Maxelweb/SwlParserUNIPD/blob/master/antlr4/swl/swl.g4)** - Sintassi del linguaggio
-- **[MyListener.cpp](https://github.com/Maxelweb/SwlParserUNIPD/blob/master/antlr4/swl/MyListner.cpp)** - Implementazione .cpp
-- **[MyListener.h](https://github.com/Maxelweb/SwlParserUNIPD/blob/master/antlr4/swl/MyListner.h)** - Implementazione Header
-- **[Esempio 1](example-1-factorial.swl)** - Calcolo dei Fattoriali
+- **[swl.g4](https://github.com/Maxelweb/SwlParserUNIPD/blob/master/development/antlr4/swl/swl.g4)** - Sintassi del linguaggio
+- **[MyListener.cpp](https://github.com/Maxelweb/SwlParserUNIPD/blob/master/development/antlr4/swl/MyListner.cpp)** - Implementazione .cpp
+- **[MyListener.h](https://github.com/Maxelweb/SwlParserUNIPD/blob/master/development/antlr4/swl/MyListner.h)** - Implementazione Header
+- **[Esempio 1](examples/1-factorial.swl)** - Calcolo dei Fattoriali
+- **[Esempio 2](examples/2-average.swl)** - Media
 
 
 ## Installazione e controllo
@@ -37,6 +40,8 @@ Developed by Jatus93 (Gianmarco Pettinato) & Maxel (Mariano Sciacco)
 7. `./translate example.swl` --> fa vedere la traduzione
 
 - Per la pulizia dopo l'utilizzo del make: `make clean` e `make distclean`
+
+---
 
 ## Files
 

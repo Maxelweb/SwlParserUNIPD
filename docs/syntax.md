@@ -171,6 +171,8 @@ end
 
 #### If-then-else nidificati con condizioni multiple
 
+- Codice SWL
+
 ```matlab
 let Check be 1
 let Vx be 1
@@ -196,6 +198,7 @@ else
 end
 ```
 
+- Traduzione in C++
 
 ```cpp
 #include <iostream>
