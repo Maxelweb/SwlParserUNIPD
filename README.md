@@ -1,9 +1,16 @@
-# Swl Parser / UNIPD
+# Simple While Language (SWL Parser)
 
-Developed by Jatus93 (Gianmarco Pettinato) & Maxel ([Mariano Sciacco](https://marianosciacco.it))
+Progetto SWL parser, realizzato nel Maggio 2018.
+Realizzato per il corso di **Automi e Linguaggi Formali**, Informatica (Scuola di Scienze, Dipartimento di Matematica, Università degli Studi di Padova).
 
 
-## Avanzamento esercizio 1
+###[DOCUMENTAZIONE](http://swl.debug.ovh)
+
+
+Developed by Jatus93 (Gianmarco Pettinato) & Maxel (Mariano Sciacco)
+
+
+## Avanzamento implementazione
 
 - [x] il ciclo while funziona
 - [x] il costrutto if-then-else funziona
@@ -38,7 +45,6 @@ Developed by Jatus93 (Gianmarco Pettinato) & Maxel ([Mariano Sciacco](https://ma
 - `MyListener.cpp/.h` --> File con le classi di traduzione. Il `.h` contiene le classi che si vanno a usare.
 - `swlBaseListener` --> Autogenerato, crea instestazioni per le classi
 
-## Da fare
 
 ### Esercizio 1
 

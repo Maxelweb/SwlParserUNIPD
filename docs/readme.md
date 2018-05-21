@@ -4,8 +4,6 @@ Progetto SWL parser, realizzato nel Maggio 2018.
 Realizzato per il corso di **Automi e Linguaggi Formali**, Informatica (Scuola di Scienze, Dipartimento di Matematica, Università degli Studi di Padova).
 
 
-> **Il progetto è attualmente in fase di sviluppo.**
-
 ## Relatori
 
 - Gianmarco Pettinato
@@ -15,7 +13,7 @@ Realizzato per il corso di **Automi e Linguaggi Formali**, Informatica (Scuola d
 
 - [Sintassi del linguaggio](syntax)
 - [Esempio 1 - Calcolo del fattoriale](example1)
-- Esempio 2 - In sviluppo
+- [Esempio 2 - Media](example2)
 
 
 ## Strutturamento del progetto
