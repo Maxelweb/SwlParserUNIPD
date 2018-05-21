@@ -197,6 +197,34 @@ end
 ```
 
 
+```cpp
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int Check = 1;
+    int Vx = 1;
+    int Vy = 1;
+    int Vz = 2;
+    int Tot = 0;
+    if (((Vx < 0 || Vy < 0 || Vz < 0) && Check)) {
+        cout << 0 << endl;
+    } else {
+        Tot += Vx;
+        Tot += Vy;
+        Tot = Tot/Vz;
+        if ((Tot >= 1)) {
+            cout << 1 << endl;
+        } else {
+            if ((Tot != 0)) {
+                cout << 1 << endl;
+            }
+        }
+    }
+}
+```
+
 ### While-do
 
 Il while-do è esattamente il `while` con una sintassi identica al if-then-else nella parte condizionale.

@@ -1,0 +1,6 @@
+begin
+	let Hello be 0
+	let World be 1
+	print Hello
+	print World
+end

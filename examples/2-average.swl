@@ -1,0 +1,17 @@
+begin
+   let sum be 0
+   let avg be 0
+   let counter be 0
+   let n be 0
+   while n >= 0 do
+       ask n
+       if n>=0 then
+           add n to sum
+           add 1 to counter
+           sub avg to avg
+           add sum to avg
+           div counter to avg
+           print avg
+       end
+   end
+end

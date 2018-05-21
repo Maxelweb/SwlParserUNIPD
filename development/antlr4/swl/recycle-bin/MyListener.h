@@ -1,13 +1,13 @@
+#pragma once
+
 /* ------------------------------
  *
  *  SWL PARSER PROJECT - UNIPD
- *  G. Pettinato - M. Sciacco
- *  DOCS: http://swl.debug.ovh
+ *  swl.debug.ovh (V-1.0)
  *
  * ------------------------------
  */
 
-#pragma once
 
 #include "antlr4-runtime.h"
 #include "swlParser.h"
@@ -17,6 +17,7 @@ using namespace std;
 /**
  * This class defines a concrete listener for a parse tree produced by swlParser.
  */
+
 
 class  MyListener : public swlBaseListener {
 private:
@@ -28,6 +29,7 @@ public:
   void exitProgram(swlParser::ProgramContext *ctx);
 
   void exitAssign(swlParser::AssignContext *ctx);
+
   void exitPrint(swlParser::PrintContext *ctx);
   void exitAsk(swlParser::AskContext *ctx);
 
@@ -44,12 +46,5 @@ public:
   void exitMult(swlParser::MultContext *ctx);
   void exitSub(swlParser::SubContext *ctx);
   void exitDiv(swlParser::DivContext *ctx);
-
-  void enterBoolean(swlParser::BooleanContext *ctx);
-  void enterLogic(swlParser::LogicContext *ctx);
-  void enterOpconf(swlParser::OpconfContext *ctx);
-  void enterVar(swlParser::VarContext *ctx);
-  void enterLb(swlParser::LbContext *ctx);
-  void enterRb(swlParser::RbContext *ctx);
 
 };
